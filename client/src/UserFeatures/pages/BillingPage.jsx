@@ -72,7 +72,7 @@ const BillingPage = () => {
   const handlePlaceOrder = async () => {
     if (orderDetails.paymentMethod === 'Online') {
       // Step 1: Call backend to create Razorpay order
-      const { data } = await axios.post('http://localhost:8000/user/create/order/razorpay', {
+      const { data } = await axios.post('https://localbazaar.onrender.com/user/create/order/razorpay', {
         amount: totalAmount + deliveryFee + taxes,
       });
   
@@ -112,7 +112,7 @@ const BillingPage = () => {
           };
   
           try {
-            await axios.post('http://localhost:8000/user/place/order', payload);
+            await axios.post('https://localbazaar.onrender.com/user/place/order', payload);
             navigate('/order-tracking');
           } catch (err) {
             console.log('Order save failed after payment:', err);
@@ -158,7 +158,7 @@ const BillingPage = () => {
       };
   
       try {
-        await axios.post('http://localhost:8000/user/place/order', payload);
+        await axios.post('https://localbazaar.onrender.com/user/place/order', payload);
         navigate('/order-tracking');
       } catch (err) {
         console.log(err);
