@@ -55,10 +55,6 @@
       <li>Earnings & Rating reports</li>
     </ul>
 </div>
-
-<div>
-   <h2>Website</h2>
-</div>
 <br></br>
 
 
