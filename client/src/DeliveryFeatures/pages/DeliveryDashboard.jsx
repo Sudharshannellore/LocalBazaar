@@ -17,7 +17,7 @@ function DeliveryDashboard() {
     const [historyOrders, setHistoryOrders] = useState([]);
     const fetchOrderHistory = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/delivery/orders-history', {
+        const response = await axios.get('https://localbazaar.onrender.com/delivery/orders-history', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('deliveryToken')}`,
           },
@@ -55,7 +55,7 @@ function DeliveryDashboard() {
   {/* Delivery Agent Orders */}
   const fetchDeliveryOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/delivery/delivery-orders', {
+      const res = await axios.get('https://localbazaar.onrender.com/delivery/delivery-orders', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('deliveryToken')}`,
         },
@@ -71,7 +71,7 @@ function DeliveryDashboard() {
   {/* Order Status Updated by Delivery Agent */}
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      await axios.patch('http://localhost:8000/user/order/update-status', { orderId, newStatus });
+      await axios.patch('https://localbazaar.onrender.com/user/order/update-status', { orderId, newStatus });
       fetchDeliveryOrders();
     } catch (error) {
       console.error('Error updating order status', error);
@@ -81,7 +81,7 @@ function DeliveryDashboard() {
   {/* Delivery Accept & Update Id in Order */}
   const handleUpdateDeliveryId = async (orderId, deliveryId) => {
     try {
-      const response = await axios.put(`http://localhost:8000/delivery/delivery-id/${orderId}`, { deliveryId });
+      const response = await axios.put(`https://localbazaar.onrender.com/delivery/delivery-id/${orderId}`, { deliveryId });
       if (response.status === 200) {
         fetchDeliveryOrders();
       }
@@ -93,7 +93,7 @@ function DeliveryDashboard() {
   {/* Delivery Agent Update Cash and Delivery Payment */}
   const handleUpdatePayment = async (orderId, isPaid) => {
     try {
-      const response = await axios.put(`http://localhost:8000/delivery/payment-status/${orderId}`, { isPaid });
+      const response = await axios.put(`https://localbazaar.onrender.com/delivery/payment-status/${orderId}`, { isPaid });
       if (response.status === 200) {
         fetchDeliveryOrders();
       }
