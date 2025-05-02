@@ -16,7 +16,7 @@ function DeliveryRegistration() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/delivery/register', {
+      const response = await axios.post('https://localbazaar.onrender.com/delivery/register', {
         username,
         email,
         password,
