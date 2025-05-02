@@ -17,7 +17,7 @@ function UserRegister() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/user/register', {
+      const response = await axios.post('https://localbazaar.onrender.com/user/register', {
         username,
         email,
         password,
