@@ -58,7 +58,7 @@ function VendorDetailPage() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.post(`http://localhost:8000/user/vendor/product/${id}`);
+        const response = await axios.post(`https://localbazaar.onrender.com/user/vendor/product/${id}`);
         setProducts(response.data || []);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -71,7 +71,7 @@ function VendorDetailPage() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/vendor/get/review/${id}`);
+        const res = await axios.get(`https://localbazaar.onrender.com/vendor/get/review/${id}`);
         setReviews(res.data);
         const avgRating = res.data.reduce((acc, review) => acc + review.rating, 0) / res.data.length;
         setAverageRating(avgRating || 0);
@@ -93,7 +93,7 @@ function VendorDetailPage() {
       await Promise.all(
         uniqueIds.map(async (id) => {
           try {
-            const res = await axios.get(`http://localhost:8000/user/get/username/${id}`);
+            const res = await axios.get(`https://localbazaar.onrender.com/user/get/username/${id}`);
             fetched[id] = res.data.username; // Adjust according to your API
           } catch (err) {
             console.error(`Error fetching username for ${id}:`, err);
@@ -114,7 +114,7 @@ function VendorDetailPage() {
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:8000/vendor/create/review/${id}`, {
+      await axios.post(`https://localbazaar.onrender.com/vendor/create/review/${id}`, {
         rating: userRating,
         comment
       }, {
