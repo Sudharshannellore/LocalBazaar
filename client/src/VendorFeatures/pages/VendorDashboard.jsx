@@ -30,7 +30,7 @@ function VendorDashboard() {
   const [historyOrders, setHistoryOrders] = useState([]);
   const fetchOrderHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/vendor/order/history', {
+      const response = await axios.get('https://localbazaar.onrender.com/vendor/order/history', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('vendorToken')}`,
         },
@@ -54,7 +54,7 @@ function VendorDashboard() {
     const fetchRatings = async () => {
       if (!vendor?.id) return;
       try {
-        const res = await axios.get(`http://localhost:8000/vendor/get/review/${vendor.id}`);
+        const res = await axios.get(`https://localbazaar.onrender.com/vendor/get/review/${vendor.id}`);
         const reviews = res.data || [];
         const avgRating = reviews.length > 0 
           ? reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length 
@@ -72,7 +72,7 @@ function VendorDashboard() {
   useEffect(() => {
     const fetchVendorOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/vendor/vendor-orders', {
+        const res = await axios.get('https://localbazaar.onrender.com/vendor/vendor-orders', {
           headers: {
             Authorization: `Bearer ${vendorToken}`,
           },
@@ -91,9 +91,9 @@ function VendorDashboard() {
   const handleStatusUpdate = async (orderId, newStatus) => {
 
     try {
-      await axios.patch('http://localhost:8000/user/order/update-status', { orderId, newStatus });
+      await axios.patch('https://localbazaar.onrender.com/user/order/update-status', { orderId, newStatus });
       setLoading(true);
-      const res = await axios.get('http://localhost:8000/vendor/vendor-orders', {
+      const res = await axios.get('https://localbazaar.onrender.com/vendor/vendor-orders', {
         headers: { Authorization: `Bearer ${vendorToken}` },
       });
       setOrders(res.data);
