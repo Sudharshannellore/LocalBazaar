@@ -1,4 +1,8 @@
-<h1>Future Vault</h1>
+<h1>Local Bazaar</h1>
+<p>LocalBazaar will be an eCommerce platform that connects consumers with local farmers, tribal artisans, and small businesses, similar to how Swiggy or Zomato connect restaurants with customers — but focused on local and traditional products.</p>
+<div style="display: flex">
+   Live:- <a href="https://local-bazaar.vercel.app/">Local Bazaar</a>
+</div>
 <div>
    <h2>Backend Development with Node.js (Express.js)</h2>
    <p>Include dependencies</p>
