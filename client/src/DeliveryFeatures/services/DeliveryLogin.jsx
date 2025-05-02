@@ -13,7 +13,7 @@ function DeliveryLogin() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/delivery/login', {
+      const response = await axios.post('https://localbazaar.onrender.com/delivery/login', {
         email,
         password,
       });
