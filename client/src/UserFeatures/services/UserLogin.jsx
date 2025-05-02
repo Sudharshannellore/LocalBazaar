@@ -14,7 +14,7 @@ function UserLogin() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/user/login', {
+      const response = await axios.post('https://localbazaar.onrender.com/user/login', {
         email,
         password,
       });
