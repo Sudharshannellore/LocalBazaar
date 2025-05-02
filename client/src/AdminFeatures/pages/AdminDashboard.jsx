@@ -17,7 +17,7 @@ function AdminDashboard() {
 
   const fetchDeliveryOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/admin/orders');
+      const res = await axios.get('https://localbazaar.onrender.com/admin/orders');
       setOrders(res.data || []);
     } catch (error) {
       console.error('Error fetching orders', error);
