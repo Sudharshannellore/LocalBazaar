@@ -17,7 +17,7 @@ function VendorLogin() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/vendor/login', {
+      const response = await axios.post('https://localbazaar.onrender.com/vendor/login', {
         businessEmail,
         password,
       });
