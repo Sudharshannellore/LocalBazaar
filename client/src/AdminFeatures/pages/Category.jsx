@@ -5,7 +5,7 @@ import { getCategoriesData } from '../../Store/StoredData';
 import Loader from '../../Components/Loader';
 
 function Category() {
-  const URL = "http://localhost:8000/admin";
+  const URL = "https://localbazaar.onrender.com/admin";
 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
