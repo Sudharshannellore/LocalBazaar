@@ -8,7 +8,7 @@ function VendorApprove() {
   const [selectedVendor, setSelectedVendor] = useState(null);
   const [loading, setLoading] = useState(true);
   
-  const URL = 'http://localhost:8000/admin';
+  const URL = 'https://localbazaar.onrender.com/admin';
 
   const fetchPending = async () => {
     try {
