@@ -3,7 +3,7 @@ import axios from "axios";
 // Categories Data
 export const getCategoriesData = async () => {
   try {
-    const response = await axios.get('https://localbazaar.onrender.com/get/category');
+    const response = await axios.get('https://localbazaar.onrender.com/admin/get/category');
     console.log("Fetched Categories:", response.data);  // Debug log
     return response.data;
   } catch (error) {

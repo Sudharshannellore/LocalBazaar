@@ -6,7 +6,7 @@ import Loader from '../../Components/Loader';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const socket = io('https://localbazaar.onrender.com'); //server URL
+const socket = io('http://localhost:8000'); //server URL
 
 const steps = [
   'Placed',
