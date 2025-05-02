@@ -9,7 +9,7 @@ function ProductManagement() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
 
-  const URL = "http://localhost:8000/vendor";
+  const URL = "https://localbazaar.onrender.com/vendor";
   const token = localStorage.getItem("vendorToken");
   // Fetch categories
   const fetchProductData = async () => {
