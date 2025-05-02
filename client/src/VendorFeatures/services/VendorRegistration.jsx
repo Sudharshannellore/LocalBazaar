@@ -37,7 +37,7 @@ function VendorRegistration() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/vendor/register', {
+      const response = await axios.post('https://localbazaar.onrender.com/vendor/register', {
         businessName,
         businessEmail,
         password,
