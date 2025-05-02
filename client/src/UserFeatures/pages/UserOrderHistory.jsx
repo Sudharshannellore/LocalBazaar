@@ -15,7 +15,7 @@ function VendorOrderHistory() {
 
   const fetchOrderHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/user/order/history', {
+      const response = await axios.get('https://localbazaar.onrender.com/user/order/history', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('userToken')}`,
         },
